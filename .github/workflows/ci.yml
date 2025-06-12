@@ -18,8 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        cabal: ["3.10.1.0"]
-        ghc: ["9.2", "9.4" , "9.6" , "9.8"]
+        cabal: ["latest"]
+        ghc: ["9.2", "9.4" , "9.6" , "9.8", "9.10", "9.12"]
     env:
       CONFIG: "--enable-tests"
     steps:
@@ -82,7 +82,7 @@ jobs:
         # The dry-run generates the build plan 'dist-newstyle/cache/plan.json'.
         # The freeze file is not suitable for a cache key as it contains the hackage timestamp,
         # which updates for every run of this action (via `cabal update`).
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         env:
           key: ${{ runner.os }}-ghc-${{ steps.setup-haskell-cabal.outputs.ghc-version }}-cabal-${{ steps.setup-haskell-cabal.outputs.cabal-version }}
         with:

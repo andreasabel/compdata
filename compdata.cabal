@@ -187,11 +187,11 @@ library
 
 
 
-  Build-Depends:        base             >= 4.16   && < 4.20,
-                        QuickCheck       >= 2.14.3 && < 2.15,
-                        containers       >= 0.6.5  && < 0.8,
+  Build-Depends:        base             >= 4.16   && < 5,
+                        QuickCheck       >= 2.14.3 && < 3,
+                        containers       >= 0.6.5  && < 1,
                         deepseq          >= 1.4    && < 1.6,
-                        template-haskell >= 2.17   && < 2.22,
+                        template-haskell >= 2.17   && < 2.24,
                         mtl              >= 2.2.2  && < 2.4,
                         transformers     >= 0.5.6  && < 0.7,
                         th-expand-syns   >= 0.4.11 && < 0.5,
